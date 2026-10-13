@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="Your 90-day study, English practice and job-search planner.">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<title>FocusPath — Study Planner</title>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">✦</span><span>FocusPath</span></div>
+    <div class="profile-mini"><div class="avatar">S</div><div><strong>My study journey</strong><small>90-day plan</small></div></div>
+    <nav class="nav">
+      <button class="nav-item active" data-view="today">▦ <span>Today</span></button>
+      <button class="nav-item" data-view="roadmap">⌁ <span>Roadmap</span></button>
+      <button class="nav-item" data-view="reminders">◷ <span>Reminders</span></button>
+      <button class="nav-item" data-view="progress">↗ <span>Progress</span></button>
+      <button class="nav-item" data-view="settings">⚙ <span>Settings & sync</span></button>
+    </nav>
+    <div class="sidebar-note"><div class="spark">✦</div><strong>Consistency beats intensity.</strong><p>One focused day at a time.</p></div>
+    <div class="sidebar-footer">Built for your next chapter.</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><div class="eyebrow" id="date-label">YOUR STUDY SPACE</div><h1 id="page-title">Good day. Let's focus.</h1></div>
+      <div class="top-actions"><span class="streak-pill">🔥 <b id="streak">0</b> day streak</span><button class="icon-btn" id="quick-add" title="Add a task">＋</button></div>
+    </header>
+    <div id="view-container"></div>
+    <footer class="app-footer">FocusPath · Your progress is saved on this device unless cloud sync is configured.</footer>
+  </main>
+</div>
+
+<div class="mobile-nav">
+  <button class="nav-item active" data-view="today">▦<small>Today</small></button>
+  <button class="nav-item" data-view="roadmap">⌁<small>Roadmap</small></button>
+  <button class="nav-item" data-view="reminders">◷<small>Reminders</small></button>
+  <button class="nav-item" data-view="progress">↗<small>Progress</small></button>
+  <button class="nav-item" data-view="settings">⚙<small>Settings</small></button>
+</div>
+
+<dialog id="task-dialog">
+  <form id="task-form" method="dialog">
+    <div class="dialog-head"><div><div class="eyebrow">MAKE IT HAPPEN</div><h2 id="dialog-title">Add a task</h2></div><button type="button" class="icon-btn" id="close-dialog">×</button></div>
+    <input type="hidden" id="task-id">
+    <label>Task name<input id="task-title" required maxlength="120" placeholder="e.g. Practise SQL joins"></label>
+    <label>Category<select id="task-category"><option>Revision</option><option>Apna College / Pandas</option><option>LangChain / GenAI</option><option>LangGraph / Agentic AI</option><option>Project</option><option>English</option><option>Job search</option><option>Break / planning</option></select></label>
+    <div class="form-row"><label>Date<input type="date" id="task-date" required></label><label>Duration (minutes)<input type="number" id="task-duration" min="5" max="600" value="60"></label></div>
+    <label>Reminder time <input type="time" id="task-time"></label>
+    <label class="switch-row"><input type="checkbox" id="task-repeat"> Repeat every day</label>
+    <label>Notes<textarea id="task-notes" rows="2" placeholder="What does done look like?"></textarea></label>
+    <div class="dialog-actions"><button type="button" class="btn secondary" id="cancel-dialog">Cancel</button><button type="submit" class="btn primary">Save task</button></div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "FocusPath Study Planner",
+  "short_name": "FocusPath",
+  "description": "90-day study planner with recurring reminders and progress tracking",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f6fa",
+  "theme_color": "#101827",
+  "icons": []
+}
